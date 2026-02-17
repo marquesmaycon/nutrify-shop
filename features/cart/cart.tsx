@@ -55,7 +55,7 @@ export function Cart() {
 
             <div className="space-y-4">
               {items.map((item) => (
-                <Item key={item.id} className="max-w-full bg-rose-200 dark:bg-rose-900/75">
+                <Item key={item.id} className="max-w-full bg-rose-200 dark:bg-teal-950">
                   <ItemMedia>
                     <Image
                       src={item.image}
@@ -101,17 +101,21 @@ export function Cart() {
                 Clear Cart
               </Button>
 
-              <Badge variant="outline" className="px-3 py-1 font-mono text-sm uppercase">
+              <Badge variant="secondary" className="px-3 py-1 font-mono text-sm uppercase">
                 Total: <span className="ml-1 font-medium">{formatCurrency(totalPrice)}</span>
               </Badge>
             </div>
 
-            <div className="flex flex-col gap-2">
-              <Button className="transition-opacity" variant="secondary" disabled={!hasItems}>
+            <div className="flex flex-col gap-2 md:flex-row">
+              <Button
+                className="transition-opacity md:flex-1"
+                variant="secondary"
+                disabled={!hasItems}
+              >
                 See more products
               </Button>
               <Button
-                className="transition-opacity"
+                className="transition-opacity md:flex-2"
                 disabled={!hasItems}
                 onClick={() => handleCheckout()}
               >

@@ -2,7 +2,7 @@ import { TvMinimalPlay } from "lucide-react"
 
 export function Video() {
   return (
-    <section className="w-full bg-rose-200 py-18 dark:bg-indigo-950">
+    <section className="w-full bg-rose-200 py-18 dark:bg-slate-950">
       <div className="container mx-auto space-y-8">
         <div className="space-y-2 text-center">
           <h2 className="text-2xl font-semibold text-balance md:text-3xl">
