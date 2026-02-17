@@ -6,8 +6,8 @@ import { Button } from "../ui/button"
 
 export function Footer() {
   return (
-    <footer className="px-4 pt-24 pb-12">
-      <div className="flex items-center justify-between">
+    <footer className="px-4 py-12">
+      <div className="container mx-auto flex items-center justify-between">
         <div className="space-x-6">
           <h6 className="mb-4">© 2026 VSL. All rights reserved.</h6>
           <Button asChild variant="link" size="sm" className="px-0!">

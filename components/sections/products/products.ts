@@ -14,8 +14,7 @@ export const products: Product[] = [
     description:
       "A daily botanical blend with vitamin C and zinc to support immune defense and year-round wellness.",
     price: 497.0,
-    image: "/med-1.jpg",
-    featured: true
+    image: "/med-1.jpg"
   },
   {
     id: 2,
@@ -55,6 +54,7 @@ export const products: Product[] = [
     description:
       "Milk thistle and antioxidant-rich botanicals to aid natural detox pathways and metabolic health.",
     price: 497.0,
-    image: "/med-6.jpg"
+    image: "/med-6.jpg",
+    featured: true
   }
 ]

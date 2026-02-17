@@ -11,7 +11,7 @@ type ProductProps = Product
 
 export function Product({ title, description, price, image, featured }: ProductProps) {
   return (
-    <Card className="mx-auto w-full max-w-sm overflow-hidden pt-0">
+    <Card className="h-full overflow-hidden pt-0">
       <Image
         src={image}
         alt={title}
@@ -20,13 +20,13 @@ export function Product({ title, description, price, image, featured }: ProductP
         height={300}
       />
       <CardHeader className="relative">
-        <CardTitle className="flex items-center justify-between">
+        <CardTitle className="flex items-center justify-between font-serif">
           {title} {featured && <Badge variant="secondary">Featured</Badge>}
         </CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
-      <CardFooter className="gap-8">
-        <span className="font-mono text-lg">$ {price.toFixed(2)}</span>
+      <CardFooter className="mt-auto gap-8">
+        <span className="font-mono text-lg lg:text-xl">$ {price.toFixed(2)}</span>
         <Button className="flex-1">
           Add to Cart <ShoppingBag />
         </Button>

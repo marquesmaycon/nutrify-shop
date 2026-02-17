@@ -5,36 +5,40 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card"
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="bg-amber-100 px-4 dark:bg-amber-950">
-      <div className="text-center">
-        <h3 className="mb-2 text-3xl">Testimonials</h3>
-        <p className="text-muted-foreground">
-          Hear from our satisfied customers who have experienced the transformative benefits of our
-        </p>
-      </div>
-      <div className="-m-2 mt-12 flex overflow-x-clip mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] py-4 lg:mt-20">
-        <ul className="animate-move-left animation-duration-[60s] hover:paused flex flex-none gap-8 pr-8">
-          {[...testimonials, ...testimonials].map((testimonial, index) => (
-            <li key={index}>
-              <Card className="h-full max-w-sm">
-                <CardContent>
-                  <div className="mb-2 flex gap-1">
-                    <Star className="fill-current text-yellow-400" />
-                    {Array.from({ length: testimonial.stars - 1 }).map((_, i) => (
-                      <Star key={i} className="fill-current text-yellow-400" />
-                    ))}
-                  </div>
-                  <p>{testimonial.quote}</p>
-                </CardContent>
-                <CardFooter className="mt-auto">
-                  <p className="text-muted-foreground">
-                    {testimonial.name} - <Badge>{testimonial.title}</Badge>
-                  </p>
-                </CardFooter>
-              </Card>
-            </li>
-          ))}
-        </ul>
+    <section id="testimonials" className="bg-amber-100 px-4 dark:bg-yellow-950">
+      <div className="container mx-auto space-y-12">
+        <div className="space-y-2 text-center">
+          <h3 className="text-2xl md:text-3xl">Testimonials</h3>
+          <p className="text-muted-foreground text-sm text-balance md:text-base">
+            Hear from our satisfied customers who have experienced the transformative benefits of
+            our
+          </p>
+        </div>
+
+        <div className="-m-2 flex overflow-x-clip mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] py-4">
+          <ul className="animate-move-left animation-duration-[60s] hover:paused flex flex-none gap-8 pr-8">
+            {[...testimonials, ...testimonials].map((testimonial, index) => (
+              <li key={index}>
+                <Card className="h-full max-w-sm">
+                  <CardContent>
+                    <div className="mb-2 flex gap-1">
+                      <Star className="fill-current text-yellow-400" />
+                      {Array.from({ length: testimonial.stars - 1 }).map((_, i) => (
+                        <Star key={i} className="fill-current text-yellow-400" />
+                      ))}
+                    </div>
+                    <p>{testimonial.quote}</p>
+                  </CardContent>
+                  <CardFooter className="mt-auto">
+                    <p className="text-muted-foreground font-serif">
+                      {testimonial.name} - <Badge>{testimonial.title}</Badge>
+                    </p>
+                  </CardFooter>
+                </Card>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   )

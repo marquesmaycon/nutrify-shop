@@ -1,20 +1,21 @@
 import "./globals.css"
 
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Domine, Inter } from "next/font/google"
 
 import { Footer } from "@/components/layout/footer"
 import { Header } from "@/components/layout/header"
 import { ThemeProvider } from "@/components/theme-provider"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-sans",
   subsets: ["latin"]
 })
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"]
+const domine = Domine({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  weight: ["400"]
 })
 
 export const metadata: Metadata = {
@@ -30,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-background overflow-x-clip font-sans antialiased`}
+        className={`${inter.variable} ${domine.variable} bg-background overflow-x-clip antialiased`}
       >
         <ThemeProvider
           attribute="class"

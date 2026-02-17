@@ -4,19 +4,21 @@ import { products } from "./products"
 export function ProductList() {
   return (
     <section id="products" className="bg-muted">
-      <div className="text-center">
-        <h3 className="mb-2 text-3xl">Products</h3>
-        <p className="text-muted-foreground">
-          Discover our range of high-quality products designed to enhance your wellness journey.
-        </p>
+      <div className="container mx-auto space-y-12">
+        <div className="space-y-2 text-center">
+          <h3 className="text-3xl md:text-4xl">Products</h3>
+          <p className="text-muted-foreground text-sm text-balance md:text-base">
+            Discover our range of high-quality products designed to enhance your wellness journey.
+          </p>
+        </div>
+        <ul className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {products.map((p) => (
+            <li key={p.id}>
+              <Product {...p} />
+            </li>
+          ))}
+        </ul>
       </div>
-      <ul className="mt-12 flex flex-col gap-8">
-        {products.map((p) => (
-          <li key={p.id}>
-            <Product {...p} />
-          </li>
-        ))}
-      </ul>
     </section>
   )
 }
