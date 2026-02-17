@@ -1,7 +1,7 @@
 import { Hero } from "@/components/sections/hero/hero"
 import { ProductList } from "@/components/sections/products/product-list"
 import { Testimonials } from "@/components/sections/testimonials/testimonials"
-import { Video } from "@/components/sections/vsl/video"
+import { Video } from "@/components/sections/video/video"
 
 export default function Home() {
   return (

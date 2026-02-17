@@ -1,5 +1,6 @@
+import { products } from "@/features/products/products"
+
 import { Product } from "./product"
-import { products } from "./products"
 
 export function ProductList() {
   return (

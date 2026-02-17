@@ -2,8 +2,7 @@ import { ArrowDown, Award, ShoppingCart } from "lucide-react"
 import Image from "next/image"
 
 import { Button } from "@/components/ui/button"
-
-import { products } from "../products/products"
+import { products } from "@/features/products/products"
 
 export function Hero() {
   const featured = products.find((product) => product.featured)!

@@ -4,8 +4,7 @@ import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-
-import type { Product } from "./products"
+import type { Product } from "@/features/products/products"
 
 type ProductProps = Product
 
