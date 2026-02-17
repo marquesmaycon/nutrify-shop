@@ -29,9 +29,7 @@ export function addToCart(item: Product) {
       : [...current, { ...item, quantity: 1 }]
 
     localStorage.setItem(STORAGE_KEY, JSON.stringify(updated))
-  } catch {
-    // Silently fail if localStorage is not available
-  }
+  } catch {}
 }
 
 export function updateCartItem(id: number, quantity: number) {
@@ -53,7 +51,5 @@ export function clearCart() {
   if (typeof window === "undefined") return
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify([]))
-  } catch {
-    // Silently fail if localStorage is not available
-  }
+  } catch {}
 }

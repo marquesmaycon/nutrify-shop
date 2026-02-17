@@ -3,6 +3,7 @@
 import { ArrowUpRightIcon, Handbag, MinusIcon, PlusIcon, ShoppingBag } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -28,8 +29,18 @@ import { formatCurrency } from "@/lib/utils"
 import { useCart } from "./cart-context"
 
 export function Cart() {
+  const router = useRouter()
+
   const { items, totalPrice, update, clear } = useCart()
   const hasItems = items.length > 0
+
+  function handleCheckout() {
+    localStorage.setItem("last_purchase", JSON.stringify(items))
+
+    clear()
+
+    router.push("/success")
+  }
 
   return (
     <section>
@@ -99,7 +110,11 @@ export function Cart() {
               <Button className="transition-opacity" variant="secondary" disabled={!hasItems}>
                 See more products
               </Button>
-              <Button className="transition-opacity" disabled={!hasItems}>
+              <Button
+                className="transition-opacity"
+                disabled={!hasItems}
+                onClick={() => handleCheckout()}
+              >
                 Checkout <ShoppingBag />
               </Button>
             </div>
