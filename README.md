@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VSL Page
 
-## Getting Started
+Landing page de VSL com foco em conversao, seccoes de produto e fluxo de compra.
 
-First, run the development server:
+## 📖 Sobre o projeto
+
+Projeto em Next.js com App Router, componentes reutilizaveis e paginas auxiliares
+(checkout, terms, privacy). A base e pensada para campanhas com UTM e foco em CTA.
+
+## ✨ Funcionalidades
+
+- 🧩 Seccoes: hero, video, produtos e depoimentos
+- 🛒 Carrinho com botao de compra e contexto compartilhado
+- 🧭 UTM tracking com persistencia entre rotas
+- 🌓 Tema claro/escuro com `next-themes`
+- 🧾 Paginas auxiliares: checkout, terms, privacy
+- 🎨 UI components reutilizaveis (Shadcn UI base)
+- ⚡ App Router + TypeScript
+
+## 🛠️ Stack tecnologica
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- Radix UI
+- Lucide Icons
+
+## 🧩 Arquitetura do projeto
+
+```
+app/
+	page.tsx
+	checkout/page.tsx
+	privacy/page.tsx
+	terms/page.tsx
+components/
+	layout/
+	sections/
+		hero/
+		video/
+		products/
+		testimonials/
+	ui/
+features/
+	cart/
+	products/
+	utm/
+lib/
+	utils.ts
+```
+
+## 🚀 Como executar
+
+### Pre-requisitos
+
+- Node.js 18+
+- npm, yarn, pnpm ou bun
+
+### Instalacao
+
+```bash
+npm install
+# ou
+yarn
+# ou
+pnpm install
+# ou
+bun install
+```
+
+### Desenvolvimento
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
+# ou
 pnpm dev
-# or
+# ou
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000) no navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧪 Comandos disponiveis
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev     # servidor local
+npm run build   # build de producao
+npm run start   # server do build
+npm run lint    # lint do projeto
+```
 
-## Learn More
+## 🎯 Destaques tecnicos
 
-To learn more about Next.js, take a look at the following resources:
+- ✅ Seccoes desacopladas para facil reuso em outras VSLs
+- ✅ Componentes UI com variacoes via `class-variance-authority`
+- ✅ Persistencia de UTM para tracking de campanhas
+- ✅ Layout pronto para CTA acima da dobra
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📌 Observacoes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- A pagina principal fica em `app/page.tsx`.
+- As seccoes ficam em `components/sections`.
+- Nao ha variaveis de ambiente obrigatorias no momento.
 
-## Deploy on Vercel
+## 📄 Licenca
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Projeto privado. Ajuste esta secao se desejar publicar.

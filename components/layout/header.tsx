@@ -1,9 +1,12 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 
-import { CartButton } from "../cart-button"
+import { useCart } from "@/features/cart/cart-context"
 
 export function Header() {
+  const { totalItems = 0 } = useCart()
   return (
     <header className="fixed top-3 z-30 flex w-full items-center justify-center">
       <nav className="flex gap-1 rounded-full border border-black/15 bg-black/10 p-0.5 backdrop-blur-md">
@@ -19,7 +22,9 @@ export function Header() {
         <Link href="/#testimonials" className="nav-link hidden sm:inline-flex">
           Testimonials
         </Link>
-        <CartButton />
+        <Link href="/checkout" className="nav-link bg-white text-gray-900 hover:bg-white/70">
+          Cart {totalItems > 0 && `(${totalItems})`}
+        </Link>
       </nav>
     </header>
   )

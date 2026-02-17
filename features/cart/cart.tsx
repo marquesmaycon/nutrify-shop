@@ -25,14 +25,11 @@ import {
 } from "@/components/ui/item"
 import { formatCurrency } from "@/lib/utils"
 
-import { getUTM } from "../utm/actions"
 import { useCart } from "./cart-context"
 
 export function Cart() {
   const { items, totalPrice, update, clear } = useCart()
   const hasItems = items.length > 0
-
-  const utm = getUTM()
 
   return (
     <section>
