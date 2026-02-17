@@ -6,6 +6,7 @@ import { Domine, Inter } from "next/font/google"
 import { Footer } from "@/components/layout/footer"
 import { Header } from "@/components/layout/header"
 import { ThemeProvider } from "@/components/theme-provider"
+import { CartProvider } from "@/features/cart/cart-context"
 
 const inter = Inter({
   variable: "--font-sans",
@@ -40,9 +41,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          <main className="flex flex-col items-center">{children}</main>
-          <Footer />
+          <CartProvider>
+            <Header />
+            <main className="flex flex-col items-center">{children}</main>
+            <Footer />
+          </CartProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -1,6 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import { CartButton } from "../cart-button"
+
 export function Header() {
   return (
     <header className="fixed top-3 z-30 flex w-full items-center justify-center">
@@ -17,9 +19,7 @@ export function Header() {
         <Link href="/#testimonials" className="nav-link hidden sm:inline-flex">
           Testimonials
         </Link>
-        <Link href="/cart" className="nav-link bg-white text-gray-900 hover:bg-white/70">
-          Cart
-        </Link>
+        <CartButton />
       </nav>
     </header>
   )
