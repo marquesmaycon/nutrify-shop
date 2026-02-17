@@ -1,14 +1,29 @@
+"use client"
+
 import { ArrowDown, Award, ShoppingCart } from "lucide-react"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { useCart } from "@/features/cart/cart-context"
 import { products } from "@/features/products/products"
 import { formatCurrency } from "@/lib/utils"
 
 export function Hero() {
-  const { title, description, price, image, off } = products.find((product) => product.featured)!
+  const router = useRouter()
+  const { add } = useCart()
+
+  const featuredProduct = products.find((product) => product.featured)!
+
+  const { title, description, price, image, off } = featuredProduct
   const offPrice = off ? price - (price * off) / 100 : price
+
+  function buy() {
+    add(featuredProduct)
+    router.push("/checkout")
+  }
+
   return (
     <section id="home" className="relative h-[85vh] bg-orange-100 md:h-[90vh] dark:bg-emerald-950">
       <div className="relative z-10 container mx-auto flex h-full flex-col items-center justify-evenly gap-6 px-6">
@@ -39,7 +54,7 @@ export function Hero() {
         </div>
 
         <div className="flex max-w-md gap-2">
-          <Button className="flex-1" size="lg">
+          <Button className="flex-1" size="lg" onClick={buy}>
             Buy Now
             <ShoppingCart />
           </Button>
