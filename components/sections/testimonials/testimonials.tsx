@@ -1,4 +1,5 @@
 import { Star } from "lucide-react"
+import Image from "next/image"
 
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
@@ -29,7 +30,15 @@ export function Testimonials() {
                     </div>
                     <p>{testimonial.quote}</p>
                   </CardContent>
-                  <CardFooter className="mt-auto">
+                  <CardFooter className="mt-auto space-x-4">
+                    <Image
+                      src={testimonial.avatar}
+                      alt="avatar"
+                      width={50}
+                      height={50}
+                      className="rounded-full"
+                      loading="lazy"
+                    />
                     <p className="text-muted-foreground font-serif">
                       {testimonial.name} - <Badge>{testimonial.title}</Badge>
                     </p>
@@ -49,18 +58,21 @@ const testimonials = [
     name: "Emma Collins",
     title: "Wellness Coach",
     quote: "I noticed steadier energy within a week, and my afternoon slump disappeared.",
-    stars: 5
+    stars: 5,
+    avatar: "https://i.pravatar.cc/50?img=1"
   },
   {
     name: "Marcus Reed",
     title: "Nutritionist",
     quote: "Clean ingredients, great taste, and clients actually stick with it.",
-    stars: 4
+    stars: 4,
+    avatar: "https://i.pravatar.cc/50?img=2"
   },
   {
     name: "Sophia Nguyen",
     title: "Yoga Instructor",
     quote: "My digestion feels calmer and I recover faster after long sessions.",
-    stars: 5
+    stars: 5,
+    avatar: "https://i.pravatar.cc/50?img=3"
   }
 ]
