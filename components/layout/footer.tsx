@@ -6,7 +6,7 @@ import { Button } from "../ui/button"
 
 export function Footer() {
   return (
-    <footer className="bg-background px-4 pt-24 pb-12">
+    <footer className="px-4 pt-24 pb-12">
       <div className="flex items-center justify-between">
         <div className="space-x-6">
           <h6 className="mb-4">© 2026 VSL. All rights reserved.</h6>

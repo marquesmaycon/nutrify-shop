@@ -1,6 +1,6 @@
 export function Video() {
   return (
-    <section className="w-full bg-slate-950 py-18">
+    <section className="w-full bg-orange-300 py-18 dark:bg-red-900">
       <div className="mb-8 space-y-4 text-center">
         <h2 className="text-3xl font-bold text-balance">Watch the video to see how it works</h2>
         <p className="text-muted-foreground">Get to know our product better</p>

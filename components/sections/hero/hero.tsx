@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 
 export function Hero() {
   return (
-    <section id="home" className="mt-18 flex min-h-[75vh] py-36">
+    <section id="home" className="flex min-h-[80vh] bg-orange-100 py-56 dark:bg-amber-900">
       <div className="flex flex-col justify-between">
         <div className="space-y-6 text-center">
           <h1 className="text-4xl">The best product for your needs</h1>

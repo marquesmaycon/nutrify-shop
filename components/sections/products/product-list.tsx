@@ -1,45 +1,19 @@
-import { ShoppingBag } from "lucide-react"
-import Image from "next/image"
-
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardAction,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle
-} from "@/components/ui/card"
-
+import { Product } from "./product"
 import { products } from "./products"
 
 export function ProductList() {
   return (
-    <section id="products" className="bg-muted/50">
-      <ul className="flex flex-col gap-8">
+    <section id="products" className="bg-muted">
+      <div className="text-center">
+        <h3 className="mb-2 text-3xl">Products</h3>
+        <p className="text-muted-foreground">
+          Discover our range of high-quality products designed to enhance your wellness journey.
+        </p>
+      </div>
+      <ul className="mt-12 flex flex-col gap-8">
         {products.map((p) => (
           <li key={p.id}>
-            <Card className="mx-auto w-full max-w-sm overflow-hidden pt-0">
-              <Image
-                src={p.image}
-                alt={p.title}
-                className="aspect-video w-full object-cover"
-                width={400}
-                height={300}
-              />
-              <CardHeader>
-                <CardAction>{p.featured && <Badge variant="secondary">Featured</Badge>}</CardAction>
-                <CardTitle>{p.title}</CardTitle>
-                <CardDescription>{p.description}</CardDescription>
-              </CardHeader>
-              <CardFooter className="gap-8">
-                <span className="font-mono text-lg">$ {p.price.toFixed(2)}</span>
-                <Button className="flex-1">
-                  Add to Cart <ShoppingBag />
-                </Button>
-              </CardFooter>
-            </Card>
+            <Product {...p} />
           </li>
         ))}
       </ul>
