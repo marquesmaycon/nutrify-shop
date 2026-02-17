@@ -25,26 +25,29 @@ import {
 } from "@/components/ui/item"
 import { formatCurrency } from "@/lib/utils"
 
+import { getUTM } from "../utm/actions"
 import { useCart } from "./cart-context"
 
 export function Cart() {
   const { items, totalPrice, update, clear } = useCart()
   const hasItems = items.length > 0
 
+  const utm = getUTM()
+
   return (
-    <div className="mt-8">
-      <section>
+    <section>
+      <div className="container mx-auto pt-10">
         <h1 className="text-center text-3xl md:text-4xl lg:text-5xl">Your Cart</h1>
 
         {hasItems && (
-          <div className="space-y-8">
+          <div className="flex flex-col gap-8">
             <p className="text-muted-foreground text-center text-sm md:text-base">
               Check your cart items below:
             </p>
 
             <div className="space-y-4">
               {items.map((item) => (
-                <Item key={item.id} className="bg-rose-200 dark:bg-rose-800/75">
+                <Item key={item.id} className="max-w-full bg-rose-200 dark:bg-rose-800/75">
                   <ItemMedia>
                     <Image
                       src={item.image}
@@ -95,9 +98,14 @@ export function Cart() {
               </Badge>
             </div>
 
-            <Button className="w-full transition-opacity" disabled={!hasItems}>
-              Checkout <ShoppingBag />
-            </Button>
+            <div className="flex flex-col gap-2">
+              <Button className="transition-opacity" variant="secondary" disabled={!hasItems}>
+                See more products
+              </Button>
+              <Button className="transition-opacity" disabled={!hasItems}>
+                Checkout <ShoppingBag />
+              </Button>
+            </div>
           </div>
         )}
 
@@ -123,7 +131,7 @@ export function Cart() {
             </EmptyContent>
           </Empty>
         )}
-      </section>
-    </div>
+      </div>
+    </section>
   )
 }

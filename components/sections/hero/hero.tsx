@@ -1,6 +1,5 @@
 import { ArrowDown, Award, ShoppingCart } from "lucide-react"
 import Image from "next/image"
-import { format } from "path"
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -11,11 +10,8 @@ export function Hero() {
   const { title, description, price, image, off } = products.find((product) => product.featured)!
   const offPrice = off ? price - (price * off) / 100 : price
   return (
-    <section
-      id="home"
-      className="relative h-[85vh] overflow-hidden bg-orange-100 py-18 md:h-[85vh] dark:bg-emerald-950"
-    >
-      <div className="relative z-10 container mx-auto flex h-full flex-col items-center justify-between gap-8 px-6 py-12">
+    <section id="home" className="relative h-[85vh] bg-orange-100 md:h-[90vh] dark:bg-emerald-950">
+      <div className="relative z-10 container mx-auto flex h-full flex-col items-center justify-evenly gap-8 px-6">
         <div className="space-y-6 text-center">
           <h3 className="font-sans text-lime-800 md:text-lg">
             Our best selling product <Award className="inline" />
@@ -26,15 +22,20 @@ export function Hero() {
           </p>
         </div>
 
-        <Image
-          src={image}
-          alt={title}
-          width={500}
-          height={500}
-          className="mx-auto h-64 w-auto rounded-xl object-contain md:h-80 lg:h-96 dark:brightness-75"
-        />
+        <div className="relative">
+          <Image
+            src={image}
+            alt={title}
+            width={500}
+            height={500}
+            className="mx-auto h-64 w-auto rounded-xl object-contain md:h-80 lg:h-92 dark:brightness-75"
+            loading="eager"
+          />
 
-        <Badge className="bg-emerald-600 text-base">{formatCurrency(offPrice)}</Badge>
+          <Badge className="absolute top-4 right-4 bg-emerald-600 text-base">
+            {formatCurrency(offPrice)}
+          </Badge>
+        </div>
 
         <div className="flex max-w-md gap-2">
           <Button className="flex-1" size="lg">
@@ -48,6 +49,9 @@ export function Hero() {
             </a>
           </Button>
         </div>
+      </div>
+      <div className="absolute -bottom-8 left-1/2 z-10 -translate-x-1/2">
+        <ArrowDown className="animation-duration-[2s] size-12 animate-bounce text-lime-600" />
       </div>
     </section>
   )

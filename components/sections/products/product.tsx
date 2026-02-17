@@ -2,6 +2,7 @@
 
 import { ShoppingBag } from "lucide-react"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -15,8 +16,17 @@ type ProductProps = Product
 
 export function Product(product: ProductProps) {
   const { title, description, price, image, featured } = product
+
+  const router = useRouter()
   const { add } = useCart()
+
   const offPrice = product.off ? price - (price * product.off) / 100 : price
+
+  function buy() {
+    add(product)
+    router.push("/checkout")
+  }
+
   return (
     <Card className="h-full overflow-hidden pt-0">
       <Image
@@ -25,6 +35,7 @@ export function Product(product: ProductProps) {
         className="aspect-video w-full object-cover dark:brightness-75"
         width={400}
         height={300}
+        loading="lazy"
       />
       <CardHeader className="relative">
         <CardTitle className="flex items-center justify-between font-serif">
@@ -41,7 +52,7 @@ export function Product(product: ProductProps) {
           <Button className="flex-1" variant="secondary" onClick={() => add(product)}>
             Add to Cart
           </Button>
-          <Button className="flex-1" onClick={() => add(product)}>
+          <Button className="flex-1" onClick={() => buy()}>
             Buy <ShoppingBag />
           </Button>
         </ButtonGroup>
