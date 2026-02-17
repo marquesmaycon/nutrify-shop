@@ -5,6 +5,7 @@ export type Product = {
   price: number
   image: string
   featured?: boolean
+  off?: number
 }
 
 export const products: Product[] = [
@@ -14,7 +15,8 @@ export const products: Product[] = [
     description:
       "A daily botanical blend with vitamin C and zinc to support immune defense and year-round wellness.",
     price: 497.0,
-    image: "/med-1.jpg"
+    image: "/med-1.jpg",
+    off: 20
   },
   {
     id: 2,
@@ -30,7 +32,8 @@ export const products: Product[] = [
     description:
       "Clinically studied strains with prebiotic fiber to support digestion, microbiome balance, and comfort.",
     price: 2997.0,
-    image: "/med-3.jpg"
+    image: "/med-3.jpg",
+    off: 15
   },
   {
     id: 4,
