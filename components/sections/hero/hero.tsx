@@ -8,11 +8,14 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { useCart } from "@/features/cart/cart-context"
 import { products } from "@/features/products/products"
+import { useUTM } from "@/features/utm/useUTM"
 import { formatCurrency } from "@/lib/utils"
 
 export function Hero() {
   const router = useRouter()
   const { add } = useCart()
+
+  useUTM()
 
   const featuredProduct = products.find((product) => product.featured)!
 

@@ -21,13 +21,13 @@ export function Video() {
           >
             <iframe
               className="absolute top-0 left-0 h-full w-full"
-              src="https://www.youtube.com/embed/4Yqe2j2Iw-Q"
+              src="https://www.youtube.com/embed/MjdpR-TY6QU?si=_LX_3Ryf4qpyQZt7"
               title="Product demonstration video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
               loading="lazy"
               aria-label="Product demonstration video"
-            />
+            ></iframe>
           </div>
         </div>
       </div>

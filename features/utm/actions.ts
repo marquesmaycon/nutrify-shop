@@ -30,6 +30,12 @@ export function captureAndPersistUTM(searchParams: URLSearchParams) {
       utm.utm_source = document.referrer || "direct"
     }
 
+    utm.utm_source = utm.utm_source || "github"
+    utm.utm_medium = utm.utm_medium || "referral"
+    utm.utm_campaign = utm.utm_campaign || "frontend_hiring_test_2026"
+    utm.utm_term = utm.utm_term || "react_nextjs_position"
+    utm.utm_content = utm.utm_content || "repository_link"
+
     const data = {
       ...utm,
       first_touch_at: new Date().toISOString()

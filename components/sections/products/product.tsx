@@ -29,14 +29,19 @@ export function Product(product: ProductProps) {
 
   return (
     <Card className="h-full overflow-hidden pt-0">
-      <Image
-        src={image}
-        alt={title}
-        className="aspect-video w-full object-cover dark:brightness-75"
-        width={400}
-        height={300}
-        loading="lazy"
-      />
+      <div className="relative">
+        {product.off && (
+          <Badge className="absolute top-2 right-2 bg-emerald-600">{product.off}% OFF</Badge>
+        )}
+        <Image
+          src={image}
+          alt={title}
+          className="aspect-video w-full object-cover dark:brightness-75"
+          width={400}
+          height={300}
+          loading="lazy"
+        />
+      </div>
       <CardHeader className="relative">
         <CardTitle className="flex items-center justify-between font-serif">
           {title} {featured && <Badge variant="secondary">Featured</Badge>}
@@ -45,8 +50,7 @@ export function Product(product: ProductProps) {
       </CardHeader>
       <CardFooter className="mt-auto justify-between">
         <div className="flex items-center gap-2">
-          <span className="font-mono text-lg lg:text-xl">{formatCurrency(offPrice)}</span>
-          {product.off && <Badge className="bg-emerald-600">{product.off}% OFF</Badge>}
+          <span className="font-mono lg:text-lg">{formatCurrency(offPrice)}</span>
         </div>
         <ButtonGroup>
           <Button className="flex-1" variant="secondary" onClick={() => add(product)}>

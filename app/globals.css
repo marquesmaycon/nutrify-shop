@@ -146,6 +146,10 @@
     scrollbar-width: thin;
   }
 
+  html {
+    scrollbar-gutter: stable;
+  }
+
 
   body {
     @apply bg-background text-foreground;

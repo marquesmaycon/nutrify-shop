@@ -55,7 +55,7 @@ export function Cart() {
 
             <div className="space-y-4">
               {items.map((item) => (
-                <Item key={item.id} className="max-w-full bg-rose-200 dark:bg-rose-800/75">
+                <Item key={item.id} className="max-w-full bg-rose-200 dark:bg-rose-900/75">
                   <ItemMedia>
                     <Image
                       src={item.image}
