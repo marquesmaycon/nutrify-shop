@@ -36,10 +36,8 @@ export function Cart() {
 
   function handleCheckout() {
     localStorage.setItem("last_purchase", JSON.stringify(items))
-
-    clear()
-
     router.push("/success")
+    clear()
   }
 
   return (
@@ -111,8 +109,12 @@ export function Cart() {
                 className="transition-opacity md:flex-1"
                 variant="secondary"
                 disabled={!hasItems}
+                asChild
               >
-                See more products
+                <Link href="/#products">
+                  Continue Shopping
+                  <ArrowUpRightIcon />
+                </Link>
               </Button>
               <Button
                 className="transition-opacity md:flex-2"
