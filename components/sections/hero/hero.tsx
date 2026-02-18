@@ -29,7 +29,7 @@ export function Hero() {
 
   return (
     <section id="home" className="relative h-[85vh] bg-orange-100 md:h-[90vh] dark:bg-emerald-950">
-      <div className="relative z-10 container mx-auto flex h-full flex-col items-center justify-evenly gap-6 px-6">
+      <div className="relative z-10 container mx-auto flex h-full flex-col items-center justify-evenly gap-6">
         <h3 className="font-serif font-bold text-orange-800 md:text-lg">NUTRIFY</h3>
         <div className="space-y-4 text-center">
           <h3 className="font-sans text-lime-800">
